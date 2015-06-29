@@ -90,8 +90,7 @@ class FileRenamingOnUpload {
     }*/
     
     public static function getFileExtension($filename) {
-	if( !preg_match('/\./', $filename) ) return '';
-	return preg_replace('/^.*\./', '', $filename);
+	   return pathinfo($path, PATHINFO_EXTENSION);
     }
     
     public function wpHandleUploadPrefilter($arr){
